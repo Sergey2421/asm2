@@ -224,15 +224,11 @@
                     JMP LOOP_END
                     
                     DELETE_WORD:
-                        ;INC SI
-                        ;POP CX
-                        ;PUSH CX
                         MOV DI,SI
                         MOV CX,DX
                         INC CX
                         MOV AL,STRING_LEN
-                        SUB AX,SI
-                        ;;;;;
+                        SUB AX,SI                 
                         DELETE_WORD_OUTER_LOOP:
                             PUSH CX
                             MOV CX,AX
@@ -252,13 +248,13 @@
                     JGE ALTERNATIVE_WAY                        
                     SUB CX,DX                     
                     SUB SI,DX
-                    INC CX  ;;;
-                    DEC SI  ;;;
+                    INC CX  
+                    DEC SI  
                     JMP LOOP_END
                     
                     ALTERNATIVE_WAY:
                         SUB SI,DX
-                        DEC SI ;;;;;                    
+                        DEC SI                     
                           
             LOOP_END:                           
                 INC SI                                     
